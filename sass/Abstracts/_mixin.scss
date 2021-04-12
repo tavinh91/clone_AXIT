@@ -1,0 +1,40 @@
+@import '../Abstracts/variables';
+
+@mixin flexbox($align: center, $justify: center, $wrap: wrap) {
+  display: flex;
+  align-items: $align;
+  justify-content: $justify;
+  flex-wrap: $wrap;
+}
+
+@mixin text($color, $fs, $fw) {
+  color: $color;
+  font-size: $fs;
+  font-weight: $fw;
+}
+
+@mixin btn-o($color, $bg, $brRadius, $padding, $fs) {
+  cursor: pointer;
+  outline: none;
+  border: none;
+  color: $color;
+  background-color: $bg;
+  border-radius: $brRadius;
+  padding: $padding;
+  font-size: $fs;
+}
+
+@mixin btn-w ($color,$bg-color,$fs,$fw,$py,$px,$border,$color-hover,$border-hover) {
+  cursor: pointer;
+  color: $color;
+  background-color:$bg-color ;
+  font-size:$fs;
+  font-weight:$fw;
+  padding: $py $px;
+  border: $border;
+  transition: all 0.5s;
+  &:hover {
+    color:$color-hover;
+    border:$border-hover;
+  }
+}

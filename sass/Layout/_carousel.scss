@@ -1,0 +1,181 @@
+.carousel {
+  background-image: url(../img/b2.jpg);
+  height: 600px;
+  @include flexbox(center, space-between, nowrap);
+  padding: 8% 5%;
+  button,
+  input {
+    outline: none;
+    border: none;
+  }
+
+  &__left {
+    max-width: 60%;
+    padding-right: 12%;
+
+    h1,
+    span,
+    hr,
+    .p1,
+    .p2 {
+      margin: 20px 0;
+    }
+
+    h1 {
+      @include text($primary-text-White, $h1, $fwBold);
+    }
+    span {
+      @include text($primary-text-Orange, $h1, $fwLight);
+    }
+    hr {
+      width: 15%;
+      height: 2px;
+    }
+    .p1 {
+      @include text($primary-text-White, $h3, $fwLight);
+    }
+    .p2 {
+      @include text($primary-text-Grey, $h6, $fwLight);
+    }
+    button {
+      @include btn-w(
+        $primary-text-White,
+        transparent,
+        $h6,
+        $fwRegular,
+        10px,
+        30px,
+        solid 2px $primary-background-White,
+        $primary-text-Orange,
+        solid 2px $primary-background-Orange
+      );
+    }
+  }
+
+  &__right {
+    border-radius: 5px;
+    max-width: 33%;
+    background-color: $primary-background-White;
+
+    h2 {
+      @include text($primary-background-lightDark, $h4, $fwMedium);
+      background-color: $primary-background-lightWhite;
+      padding: 20px;
+      text-align: center;
+      border-radius: 5px 5px 0 0;
+    }
+
+    span {
+      color: $primary-text-Orange;
+    }
+
+    &--textgroup {
+      padding: 0 20px 40px 20px;
+
+      input {
+        width: 100%;
+        padding: 20px 0 5px 20px;
+        border-bottom: 1px solid $primary-text-Grey;
+        background: $primary-background-White;
+        margin: 10px 0;
+      }
+      ::placeholder {
+        opacity: 0.6;
+      }
+    }
+
+    button {
+      @include btn-o(
+        $primary-text-White,
+        $primary-background-Orange,
+        0 0 5px 5px,
+        20px,
+        1.5rem
+      );
+      letter-spacing: 1px;
+      width: 100%;
+      opacity: 0.8;
+    }
+  }
+
+  @media screen and (max-width: 768px) {
+    &__left {
+      padding-right: 10%;
+
+      h1 {
+        @include text($primary-text-White, $h2, $fwBold);
+      }
+      span {
+        @include text($primary-text-Orange, $h2, $fwLight);
+      }
+      .p1 {
+        @include text($primary-text-White, $h4, $fwLight);
+      }
+      .p2 {
+        @include text($primary-text-Grey, $subtitle, $fwLight);
+      }
+      button {
+        font-size: $subtitle;
+      }
+    }
+
+    &__right {
+      h2 {
+        @include text($primary-background-lightDark, $h6, $fwMedium);
+        padding: 10px;
+      }
+
+      span {
+        color: $primary-text-Orange;
+      }
+
+      button {
+        font-size: $subtitle;
+      }
+    }
+  }
+
+  @media screen and (max-width: 576px) {
+    &__left {
+      padding-right: 10%;
+
+      h1 {
+        @include text($primary-text-White, $h4, $fwBold);
+      }
+      span {
+        @include text($primary-text-Orange, $h4, $fwLight);
+      }
+      .p1 {
+        @include text($primary-text-White, $h6, $fwLight);
+      }
+      .p2 {
+        @include text($primary-text-Grey, $body2, $fwLight);
+      }
+      button {
+        padding: 5px 15px;
+        font-size: $subtitle;
+      }
+    }
+
+    &__right {
+      h2 {
+        @include text($primary-background-lightDark, $subtitle, $fwMedium);
+        padding: 5px;
+      }
+
+      span {
+        color: $primary-text-Orange;
+      }
+
+      button {
+        font-size: $subtitle;
+      }
+
+      &--textgroup {
+        input {
+          padding: 20px 0 5px 5px;
+        }
+      }
+    }
+  }
+}

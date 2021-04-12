@@ -1,0 +1,30 @@
+.footer {
+  @include flexbox(center, space-evenly, nowrap);
+  flex-direction: column;
+  height: 80px;
+  background: $primary-background-Dark;
+
+  &__top {
+    a {
+      @include text($primary-text-Grey, $h4, $fwLight);
+      transition: all 0.5s;
+      margin-right: 20px;
+      text-align: center;
+      text-decoration: none;
+    }
+
+    i {
+      width: 18px;
+      height: 18px;
+    }
+
+    &__item:hover {
+      color: $primary-background-Orange;
+    }
+  }
+
+  &__bottom {
+    @include text($primary-text-Grey, $body2, $fwLight);
+    align-items: center;
+  }
+}

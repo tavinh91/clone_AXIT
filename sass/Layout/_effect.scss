@@ -1,0 +1,89 @@
+.effect {
+  @include flexbox(center, center, nowrap);
+  height: 550px;
+  background-color: $primary-background-lightWhite;
+  padding: 5%;
+
+  &__tab {
+    overflow: hidden;
+    button {
+      width: 110px;
+      @include btn-o($primary-text-White, #333333, 0, 40px 25px, 15px);
+      transition: 0.5s;
+      cursor: pointer;
+      border: 1px solid #ccc;
+
+      &:hover {
+        background-color: $primary-background-Orange;
+      }
+
+      &.active {
+        background-color: $primary-background-Orange;
+      }
+    }
+  }
+
+  &__tabcontent {
+    display: none;
+    padding-left: 70px;
+
+    &__item {
+      .p1,
+      .p2,
+      .p3 {
+        margin: 20px 0;
+        line-height: 20px;
+      }
+
+      .p1 {
+        @include text($primary-text-Dark, $h4, $fwMedium);
+      }
+
+      .p2 {
+        @include text($primary-text-Grey, $subtitle, $fwLight);
+        margin-top: 10px;
+      }
+
+      button {
+        @include btn-o(
+          $primary-text-White,
+          $primary-background-Orange,
+          5px,
+          15px 20px,
+          1.5rem
+        );
+      }
+    }
+
+    img {
+      padding-left: 70px;
+      width: 50%;
+      height: auto;
+    }
+  }
+
+  @media screen and (max-width: 576px) {
+    display: block;
+    height: 300px;
+
+    &__tab{
+      button{
+        width: auto;
+        padding: 25px 10px;
+      }
+    }
+
+    &__tabcontent {
+      padding-left: 0;
+      .p1{
+        font-size: $h5;
+      }
+      .p2 {
+        display: none;
+      }
+      img{
+        padding-left: 30px;
+      }
+    }
+  }
+}

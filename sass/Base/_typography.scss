@@ -1,0 +1,21 @@
+.warpper {
+  background-color: #0e0e0e;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.back-to-top {
+  width: 40px;
+  height: 40px;
+  display: block;
+  color: $primary-background-Orange;
+  border-radius: 50%;
+  text-align: center;
+  line-height: 40px;
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+}

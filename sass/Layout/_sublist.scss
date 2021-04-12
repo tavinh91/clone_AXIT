@@ -1,0 +1,118 @@
+.sublist {
+  background-color: $primary-background-White;
+  height: 550px;
+  @include flexbox(center, space-between, nowrap);
+  padding: 8% 5%;
+
+  &__left {
+    img {
+      width: 100%;
+    }
+  }
+
+  &__right {
+    max-width: 55%;
+    padding-left: 10%;
+
+    hr,
+    .p1,
+    .p2,
+    .p3 {
+      margin: 20px 0;
+      line-height: 20px;
+    }
+
+    hr {
+      width: 12%;
+      border: solid 1px $primary-text-Orange;
+    }
+    .p1 {
+      @include text($primary-text-Dark, $h4, $fwMedium);
+    }
+
+    &__item {
+      @include flexbox(none, space-between, nowrap);
+
+      i.fas.fa-cloud-upload-alt::before,
+      i.fas.fa-cloud-download-alt::before {
+        font-size: 13px;
+      }
+
+      i {
+        color: $primary-background-Orange;
+        height: 40px;
+        width: 50px;
+        text-align: center;
+        line-height: 35px;
+        border: 2px solid $primary-background-Orange;
+        border-radius: 50%;
+        transition: all 0.5s;
+      }
+
+      i:hover {
+        color: #ffffff;
+        background-color: $primary-background-Orange;
+      }
+
+      h1,
+      .p3 {
+        margin-left: 20px;
+        display: flex;
+        flex-direction: column;
+      }
+    }
+
+    .p2,
+    .p3 {
+      @include text($primary-text-Grey, $subtitle, $fwLight);
+      margin-top: 10px;
+    }
+  }
+
+  @media screen and (max-width: 768px) {
+    &__right {
+      .p2,
+      .p3 {
+        display: -webkit-box;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        -webkit-line-clamp: 2;
+        -webkit-box-orient: vertical;
+      }
+      &__item {
+        i.fas.fa-cloud-upload-alt::before,
+        i.fas.fa-cloud-download-alt::before {
+          font-size: 12px;
+        }
+
+        i {
+          height: 28px;
+          width: 50px;
+          line-height: 25px;
+        }
+        h1 {
+          font-size: $h5;
+        }
+      }
+    }
+  }
+
+  @media screen and (max-width: 576px) {
+    display: block;
+    height: 400px;
+
+    img {
+      display: none;
+    }
+
+    &__right {
+      text-align: center;
+      max-width: 100%;
+      padding: 0;
+
+      hr{
+        margin: 0 auto;
+      }
+    }
+  }
+}

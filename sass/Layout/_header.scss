@@ -1,0 +1,50 @@
+.header {
+  background: $primary-background-Dark;
+  @include flexbox(center, space-between, nowrap);
+  padding: 1% 5%;
+  font-weight: $fwBold;
+
+  a {
+    text-decoration: none;
+  }
+
+  &__home {
+    @include flexbox(center, space-between, wrap);
+    outline: none;
+
+    h1 {
+      @include text($primary-text-White, $h3, $fwBold);
+    }
+    span {
+      @include text($primary-text-Orange, $h3, $fwLight);
+    }
+  }
+
+  .navbar {
+    //@include text($primary-text-Grey, $h6, $fwRegular);
+
+    padding-right: 0 !important;
+    background-color: black !important;
+  }
+
+  .navbar-toggler {
+    background-color: white !important;
+  }
+
+  .nav-item {
+    margin-right: 30px;
+    a {
+      @include text($primary-text-Grey !important, $h6, $fwRegular);
+    }
+  }
+
+  .item5 {
+    margin-right: 0 !important;
+  }
+
+  @media screen and (max-width: 768px) {
+    .navbar {
+      width: 60px;
+    }
+  }
+}

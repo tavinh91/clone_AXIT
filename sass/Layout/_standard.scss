@@ -1,0 +1,54 @@
+.standard {
+  background-color: $primary-background-lightWhite;
+  height: 550px;
+  @include flexbox(center, space-between, nowrap);
+  padding: 8% 5%;
+
+  &__left {
+    max-width: 55%;
+    padding-right: 9.5%;
+
+    hr,
+    .p1,
+    .p2 {
+      margin: 20px 0;
+      line-height: 18px;
+    }
+
+    hr {
+      width: 12%;
+      border: solid 1px $primary-text-Orange;
+    }
+    .p1 {
+      @include text($primary-text-Dark, $h4, $fwMedium);
+    }
+    .p2 {
+      @include text($primary-text-Grey, $subtitle, $fwLight);
+    }
+  }
+
+  &__right {
+    img {
+      width: 100%;
+    }
+  }
+
+  @media screen and (max-width: 576px) {
+    display: block;
+    height: 300px;
+
+    img {
+      display: none;
+    }
+
+    &__left {
+      text-align: center;
+      max-width: 100%;
+      padding: 0;
+
+      hr {
+        margin: 0 auto;
+      }
+    }
+  }
+}

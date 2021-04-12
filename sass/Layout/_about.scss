@@ -1,0 +1,79 @@
+.about {
+  padding: 60px 5%;
+  background-color: $primary-background-White;
+
+  h1 {
+    padding-bottom: 20px;
+    @include text($primary-text-Dark, $h3, $fwLight);
+    text-align: center;
+    letter-spacing: 2px;
+  }
+
+  hr {
+    border: solid 1px $primary-text-Orange;
+    width: 6%;
+    margin: 0 auto;
+    margin-bottom: 20px;
+  }
+
+  h2 {
+    font-weight: $fwBold;
+  }
+
+  p {
+    text-align: center;
+    @include text($primary-text-Grey, $subtitle, $fwLight);
+  }
+
+  &__list {
+    padding-top: 20px;
+    display: flex;
+
+    .item--3 {
+      margin-right: 0 !important;
+    }
+
+    &__item {
+      text-align: center;
+      margin-right: 15px;
+      width: 33.33%;
+
+      i.fa.fa-lightbulb::before,
+      i.fa.fa-keyboard::before,
+      i.fa.fa-bolt::before {
+        font-size: 22px;
+      }
+
+      i {
+        color: $primary-background-Orange;
+        height: 65px;
+        width: 65px;
+        text-align: center;
+        line-height: 65px;
+        border: 2px solid $primary-background-Orange;
+        border-radius: 50%;
+        transition: all 0.5s;
+      }
+
+      i:hover {
+        color: #ffffff;
+        background-color: $primary-background-Orange;
+      }
+
+      h2 {
+        padding: 20px 0;
+        @include text($primary-text-Dark, $h5, $fwBold);
+      }
+
+      p {
+        line-height: 20px;
+      }
+    }
+  }
+
+  @media screen and (max-width: 576px) {
+    p{
+      display: none;
+    }
+  }
+}
